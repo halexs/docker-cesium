@@ -9,10 +9,13 @@ services:
       - 5001:80
 
   website:
-    image: php:apache
+    #image: php:apache
+    image: eboraas/apache
     volumes:
       - ./website:/var/www/html
     ports:
-      - 5000:80
+      #- 5000:80
+      - 5002:80
+      - 5003:443
     depends_on:
       - product-service
